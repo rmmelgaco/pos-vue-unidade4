@@ -12,7 +12,7 @@ if (!filmesStore?.filmes?.length) {
   <h3>Lista de filmes</h3>
   <section v-if='filmesStore?.filmes?.length'>
     <RouterLink v-for='(filme, indice) in filmesStore.filmes'
-                :key='`filme${indice}`' :to='{name: "detalhe-filme", params: { codigoFilme: filme.codigo}}'>
+                :key='`filme${indice}`' :to='{name: "detalhe-filme", params: { idFilme: filme.id}}'>
       <Filme :filme='filme'/>
     </RouterLink>
   </section>

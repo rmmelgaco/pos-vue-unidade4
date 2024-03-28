@@ -26,7 +26,7 @@ const rotaFilmes = {
     meta: {requiresAdmin: true},
     children: [
         {path: '/', name: 'filmes', component: importListarFilmesPage},
-        {path: '/:codigoFilme', name: 'detalhe-filme', component: importDetalhesFilmePage},
+        {path: '/:idFilme', name: 'detalhe-filme', component: importDetalhesFilmePage},
         {path: '/inserir', name: 'inserir-filme', component: importInserirFilmePage},
     ]
 }

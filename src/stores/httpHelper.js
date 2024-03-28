@@ -1,7 +1,7 @@
 export const chamadaHttp = (url, objetoParaAtualizar, carregando, mensagem, metodoHttp = 'GET', corpo = null) => {
     carregando.value = true
     const headers = {'Content-type': 'application/json'}
-    const opcoesHttp = {metodoHttp, headers}
+    const opcoesHttp = {method: metodoHttp, headers}
 
     if (corpo) {
         opcoesHttp.body = JSON.stringify(corpo)
