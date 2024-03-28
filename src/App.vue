@@ -1,11 +1,28 @@
 <script setup>
 import {useAutenticacaoStore} from '@/stores/autenticacao.js';
 import {useRouter} from 'vue-router';
-import {watch} from 'vue';
+import {computed, watch} from 'vue';
 
 const autenticacaoStore = useAutenticacaoStore()
 
 const router = useRouter()
+
+const menus = [
+  { label: 'Início', rota: '/' }
+]
+
+const menusAdministrador = [
+  { label: 'Filmes', rota: '/filmes' },
+  { label: 'Usuários', rota: '/usuarios' }
+]
+
+const menusUsuario = computed(() => {
+  if (autenticacaoStore?.usuarioAutenticado?.perfil === 'Administrador') {
+    return [...menus, ...menusAdministrador]
+  } else if (autenticacaoStore.usuarioAutenticado){
+    return menus
+  }
+})
 
 const logout =  () => {
   autenticacaoStore.usuario = null
@@ -13,8 +30,7 @@ const logout =  () => {
 
 watch(() => autenticacaoStore.usuarioAutenticado, (usuarioAutenticado) => {
   if (usuarioAutenticado) {
-    router.replace({ name: 'inicio' +
-          ''})
+    router.replace({ name: 'inicio'})
   }
 })
 </script>
@@ -22,7 +38,10 @@ watch(() => autenticacaoStore.usuarioAutenticado, (usuarioAutenticado) => {
   <header>
     <div class='wrapper'>
       <nav>
-        <RouterLink to='/'>Início</RouterLink>
+        <RouterLink
+            v-for='(menu, indice) in menusUsuario'
+            :key='`menu${indice}`' :to='menu.rota'
+        >{{ menu.label }}</RouterLink>
         <RouterLink v-if='!autenticacaoStore.usuarioAutenticado' to='/login'>Login</RouterLink>
         <a v-else @click='logout' >Logout</a>
       </nav>

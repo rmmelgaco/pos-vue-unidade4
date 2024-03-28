@@ -1,17 +1,18 @@
 {
   "usuarios": [
     {
-      "login": "melgaco",
-      "senha": "123"
+      "login": "rodrigo",
+      "senha": "123",
+      "perfil": "Administrador"
     },
     {
-      "login": "joaofc",
+      "login": "joao",
       "senha": "321"
-
     }
   ],
   "filmes": [
     {
+      "codigo": 1,
       "nome": "Dois é demais em Orlando",
       "classificacao": "livre",
       "duracao": 100,
@@ -19,6 +20,7 @@
       "emCartaz": true
     },
     {
+      "codigo": 2,
       "nome": "Sessão secreta",
       "classificacao": "12 anos",
       "duracao": 105,
@@ -26,6 +28,7 @@
       "emCartaz": true
     },
     {
+      "codigo": 3,
       "nome": "Instinto Materno",
       "classificacao": "14 anos",
       "duracao": 99,
