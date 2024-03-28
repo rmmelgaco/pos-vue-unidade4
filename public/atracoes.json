@@ -1,0 +1,27 @@
+[
+  {
+    "nome": "Catedral Metropolitana de Brasília",
+    "descricao": "Inaugurada em 1970, e projetada por Oscar Niemeyer, a Catedral possui um formato único, tem 40 metros de altura, formada por 16 colunas curvas de concreto que se unem no centro. As estátuas em bronze dos quatro evangelistas guardam a entrada da igreja, que tem seu acesso por uma rampa em declive para o subsolo. O interior da Catedral é muito bem iluminado pela luz natural vinda dos vitrais coloridos do teto.",
+    "visitacao": "Todos os dias, das 8h às 18h – Externa e interna livre"
+  },
+  {
+    "nome": "Congresso Nacional",
+    "descricao": "Sede do Poder Legislativo Brasileiro, o Congresso Nacional foi projetado por Oscar Niemeyer e possuem em seu interior, um vasto acervo cultural e paisagístico. Os 2 edifícios em forma de H tem 28 andares e abrigam atividades administrativas. Na cúpula convexa se encontra o plenário da Câmara dos Deputados e na côncava, o do Senado Federal. Ao redor dos edifícios principais, encontram-se os anexos.",
+    "visitacao": "Visita externa: Livre. Visita interna guiada: Todas as visitas no interior do Congresso são gratuitas, porém, com acompanhamento de um guia, e em algumas situações é necessário agendar."
+  },
+  {
+    "nome": "Palácio do Planalto",
+    "descricao": "O Palácio do Planalto é uma obre de Oscar Niemeyer, inaugurado em 1960 para ser a sede do Poder Executivo, local de trabalho do Presidente da República. Rodeado por um espelho d’água, tem seu acesso feito por uma rampa entre pilares que mistura linhas retas com curvas.",
+    "visitacao": "Visitas guiadas acontecem aos domingos das 9h30 às 14h30, para grupos de até 30 pessoas com duração de 30 minutos. Entrada franca."
+  },
+  {
+    "nome": "Palácio da Alvorada",
+    "descricao": "Mais uma obra de Oscar Niemeyer, o Palácio da Alvorada é a residência oficial do Presidente do Brasil. É uma das mais importantes obras da arquitetura de Brasília. Foi o primeiro prédio construído em alvenaria na nova capital, inaugurado em 30 de junho de 1958.",
+    "visitacao": "Visitação externa durante o dia e visitação interna às quartas-feiras das 15h às 17h. As 14h começa a distribuição das 300 senhas disponíveis. Entrada franca."
+  },
+  {
+    "nome": "Estádio Nacional de Brasília – Mané Garrincha",
+    "descricao": "Também conhecido como Mané Garrincha, o Estádio Nacional de Brasília foi todo reconstruído para Copa do Brasil 2014, no local do antigo estádio de 1974. Com capacidade para 71.400 pessoas, o estádio possui um design diferenciado, com 288 colunas de concreto aparentes em sua parte externa e sua cobertura convexa.",
+    "visitacao": "Os turistas podem visitar a área interna todos os sábados das 09:00 às 11:30. Em outros dias, somente se tem acesso à área externa."
+  }
+]
