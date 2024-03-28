@@ -1,0 +1,38 @@
+{
+  "usuarios": [
+    {
+      "login": "melgaco",
+      "senha": "123"
+    },
+    {
+      "login": "joaofc",
+      "senha": "321"
+
+    }
+  ],
+  "filmes": [
+    {
+      "nome": "Dois é demais em Orlando",
+      "classificacao": "livre",
+      "duracao": 100,
+      "genero": "Aventura",
+      "emCartaz": true
+    },
+    {
+      "nome": "Sessão secreta",
+      "classificacao": "12 anos",
+      "duracao": 105,
+      "genero": "Comédia",
+      "emCartaz": true
+    },
+    {
+      "nome": "Instinto Materno",
+      "classificacao": "14 anos",
+      "duracao": 99,
+      "genero": "Drama",
+      "emCartaz": false
+    }
+  ],
+  "eventos": [
+  ]
+}
