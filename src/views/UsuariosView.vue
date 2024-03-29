@@ -5,11 +5,12 @@ const autenticacaoStore = useAutenticacaoStore()
 if (!autenticacaoStore?.usuarios?.length) {
   autenticacaoStore.recuperarUsuarios()
 }
-const usuarios = autenticacaoStore.usuarios
+
 </script>
 
 <template>
   <h1>Usuários</h1>
+  <p v-show='autenticacaoStore.carregando'>Carregando...</p>
   <table>
     <thead>
     <tr>
@@ -19,7 +20,7 @@ const usuarios = autenticacaoStore.usuarios
     </tr>
     </thead>
     <tbody>
-    <tr v-for='(usuario, indice) in usuarios' :key='`usuario${indice}`'>
+    <tr v-for='(usuario, indice) in autenticacaoStore.usuarios' :key='`usuario${indice}`'>
       <td>
         {{ usuario.nome }}
       </td>
