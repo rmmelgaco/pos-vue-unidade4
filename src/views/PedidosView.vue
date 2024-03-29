@@ -7,8 +7,6 @@ import Filme from '@/components/Filme.vue';
 const clientesStore = useClientesStore()
 const autententicacaoStore = useAutenticacaoStore()
 
-const filmesCliente = clientesStore.filmesCliente
-
 watch(() => autententicacaoStore.usuarioAutenticado, (usuarioAutenticado) => {
   if (usuarioAutenticado) {
     clientesStore.recuperarClientesPorUsuario(usuarioAutenticado.id)
@@ -24,8 +22,8 @@ watch(() => clientesStore.clienteDoUsuario, (cliente) => {
 
 <template>
   <h2>Pedidos</h2>
-  <section v-if='filmesCliente?.length'>
-    <Filme v-for='(filme, indice) in filmesCliente'
+  <section v-if='clientesStore.filmesCliente?.length'>
+    <Filme v-for='(filme, indice) in clientesStore.filmesCliente'
            :key='`filme${indice}`' :filme='filme'/>
   </section>
 </template>

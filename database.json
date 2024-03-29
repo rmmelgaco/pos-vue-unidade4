@@ -2,12 +2,14 @@
   "usuarios": [
     {
       "id": 1,
+      "nome": "Rodrigo de Melo",
       "login": "rodrigo",
       "senha": "123",
       "perfil": "Administrador"
     },
     {
       "id": 2,
+      "nome": "João da Silva",
       "login": "joao",
       "senha": "321",
       "perfil": "Cliente"

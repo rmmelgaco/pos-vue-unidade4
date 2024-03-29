@@ -17,6 +17,7 @@ const filmesEmCartaz = computed(() => {
 <template>
   <main>
     <p v-show='filmesStore.carregando'>Carregando...</p>
+    <h2>Filmes em cartaz:</h2>
     <section v-if='filmesEmCartaz?.length'>
       <Filme v-for='(filme, indice) in filmesEmCartaz'
              :key='`filme${indice}`'

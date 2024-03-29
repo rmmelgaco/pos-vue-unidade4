@@ -34,7 +34,9 @@ export const useClientesStore = defineStore('clientes', () => {
                 if (filmesCliente.value === null) {
                     filmesCliente.value = []
                 }
-                filmesCliente.value.push(filme)
+                if (filmesCliente.value.filter(filmeSalvo => filmeSalvo.id == filme.id).length === 0) {
+                    filmesCliente.value.push(filme)
+                }
             }
         })
     }

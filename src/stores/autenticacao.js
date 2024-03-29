@@ -6,6 +6,7 @@ export const useAutenticacaoStore = defineStore('auth', () => {
     const url = 'http://localhost:3000/usuarios'
 
     const usuario = ref(null)
+    const usuarios = ref(null)
     const carregando = ref(null)
     const mensagem = ref(null)
 
@@ -20,8 +21,12 @@ export const useAutenticacaoStore = defineStore('auth', () => {
         chamadaHttp(`${url}?login=${login}&senha=${senha}&_limit=1`, usuario, carregando, mensagem)
     }
 
+    const recuperarUsuarios = () => {
+        chamadaHttp(url, usuarios, carregando, mensagem)
+    }
+
     return {
-        usuario, carregando, mensagem, estaAutenticado, usuarioAutenticado,
-        cadastrarUsuario, autenticarUsuario
+        usuario, carregando, mensagem, estaAutenticado, usuarioAutenticado, usuarios,
+        cadastrarUsuario, autenticarUsuario, recuperarUsuarios
     }
 })
