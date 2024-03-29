@@ -41,7 +41,7 @@ watch(() => filmesStore.filmeSalvo, (filmeSalvo) => {
     <input type='text' placeholder='Classificação' v-model='filme.classificacao'/>
     <input type='text' placeholder='Gênero' v-model='filme.genero'/>
     <input type='number' placeholder='Duração' min='0' v-model.number='filme.duracao'/>
-    <input type='checkbox' v-model='filme.emCartaz'/> <span>Em cartaz</span>
+    <div><input type='checkbox' v-model='filme.emCartaz'/> Em cartaz</div>
     <button @click.prevent='salvar'>Salvar</button>
   </form>
 </template>

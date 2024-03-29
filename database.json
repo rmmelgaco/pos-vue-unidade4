@@ -1,13 +1,16 @@
 {
   "usuarios": [
     {
+      "id": 1,
       "login": "rodrigo",
       "senha": "123",
       "perfil": "Administrador"
     },
     {
+      "id": 2,
       "login": "joao",
-      "senha": "321"
+      "senha": "321",
+      "perfil": "Cliente"
     }
   ],
   "filmes": [
@@ -34,7 +37,27 @@
       "duracao": 99,
       "genero": "Drama",
       "emCartaz": false
+    },
+    {
+      "nome": "Novo filme teste",
+      "classificacao": "Livre",
+      "genero": "Aventura",
+      "duracao": 111,
+      "emCartaz": true,
+      "id": 4
     }
   ],
-  "eventos": []
+  "clientes": [
+    {
+      "id": 1,
+      "idUsuario": 2,
+      "pedidos": [
+        {
+          "id": 1,
+          "idCliente": 1,
+          "idFilme": 2
+        }
+      ]
+    }
+  ]
 }

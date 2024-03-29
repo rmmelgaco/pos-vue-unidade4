@@ -20,6 +20,17 @@ export const useFilmesStore = defineStore('filmes', () => {
     const recuperarFilme = (idFilme) => {
         chamadaHttp(`${url}/${idFilme}`, filme, carregando, mensagem)
     }
+
+    const retornarFilmePorId = async (idFilme) => {
+        let filme = null
+        try {
+            const resposta = await fetch(`${url}/${idFilme}`)
+            filme = await resposta.json()
+        } catch(erro) {
+            mensagem.value = erro
+        }
+        return filme
+    }
     const atualizarFilme = (idFilme, novoFilme) => {
         filmeSalvo.value = false
         chamadaHttp(`${url}/${idFilme}`, filme, carregando, mensagem, filmeSalvo, 'PATCH', novoFilme)
@@ -31,6 +42,6 @@ export const useFilmesStore = defineStore('filmes', () => {
 
     return {
         filmes, filme, carregando, mensagem, filmeSalvo,
-        recuperarFilmes, recuperarFilme, inserirFilme, atualizarFilme, excluirFilme
+        recuperarFilmes, recuperarFilme, inserirFilme, atualizarFilme, excluirFilme, retornarFilmePorId
     }
 })

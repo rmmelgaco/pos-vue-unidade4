@@ -16,9 +16,17 @@ const menusAdministrador = [
   { label: 'Usuários', rota: '/usuarios' }
 ]
 
+const menusCliente = [
+  { label: 'Pedidos', rota: '/pedidos' },
+  { label: 'Dados cliente', rota: '/dados-cliente' },
+]
+
 const menusUsuario = computed(() => {
   if (autenticacaoStore?.usuarioAutenticado?.perfil === 'Administrador') {
     return [...menus, ...menusAdministrador]
+  }
+  else if (autenticacaoStore?.usuarioAutenticado?.perfil === 'Cliente') {
+      return [...menus, ...menusCliente]
   } else if (autenticacaoStore.usuarioAutenticado){
     return menus
   }
