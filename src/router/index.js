@@ -25,9 +25,10 @@ const rotaFilmes = {
     component: importFilmesPage,
     meta: {requiresAdmin: true},
     children: [
-        {path: '/', name: 'filmes', component: importListarFilmesPage},
+        {path: '', name: 'filmes', component: importListarFilmesPage},
         {path: '/:idFilme', name: 'detalhe-filme', component: importDetalhesFilmePage},
         {path: '/inserir', name: 'inserir-filme', component: importInserirFilmePage},
+        {path: '/:idFilme/editar', name: 'editar-filme', component: importInserirFilmePage}
     ]
 }
 

@@ -8,25 +8,29 @@ export const useFilmesStore = defineStore('filmes', () => {
     const filme = ref(null)
     const carregando = ref(false)
     const mensagem = ref(null)
+    const filmeSalvo = ref(false)
 
     const recuperarFilmes = () => {
         chamadaHttp(url, filmes, carregando, mensagem)
     }
     const inserirFilme = (novoFilme) => {
-        chamadaHttp(url, filme, carregando, mensagem, 'POST', novoFilme)
+        filmeSalvo.value = false
+        chamadaHttp(url, filme, carregando, mensagem, filmeSalvo, 'POST', novoFilme)
     }
     const recuperarFilme = (idFilme) => {
         chamadaHttp(`${url}/${idFilme}`, filme, carregando, mensagem)
     }
     const atualizarFilme = (idFilme, novoFilme) => {
-        chamadaHttp(`${url}/${idFilme}`, filme, carregando, mensagem, 'PATCH', novoFilme)
+        filmeSalvo.value = false
+        chamadaHttp(`${url}/${idFilme}`, filme, carregando, mensagem, filmeSalvo, 'PATCH', novoFilme)
     }
     const excluirFilme = (idFilme) => {
-        chamadaHttp(`${url}/${idFilme}`, filme, carregando, mensagem, 'DELETE')
+        filmeSalvo.value = false
+        chamadaHttp(`${url}/${idFilme}`, filme, carregando, mensagem, filmeSalvo, 'DELETE')
     }
 
     return {
-        filmes, filme, carregando, mensagem,
+        filmes, filme, carregando, mensagem, filmeSalvo,
         recuperarFilmes, recuperarFilme, inserirFilme, atualizarFilme, excluirFilme
     }
 })

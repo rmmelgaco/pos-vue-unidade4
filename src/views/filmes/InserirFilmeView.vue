@@ -1,19 +1,32 @@
 <script setup>
-import {useRouter} from 'vue-router';
+import {useRoute, useRouter} from 'vue-router';
 import {useFilmesStore} from '@/stores/filmes';
 import {reactive, watch} from 'vue';
 
 const router = useRouter()
+const route = useRoute()
 const filmesStore = useFilmesStore()
+const { idFilme } = route.params
 
 const filme = reactive({})
 
-const salvar = () => {
-  filmesStore.inserirFilme(filme)
+if (idFilme) {
+  filmesStore.recuperarFilme(idFilme)
+} else {
+  filmesStore.filme = {}
 }
 
-watch(() => filmesStore.carregando, (carregando) => {
-      if (!carregando) {
+const salvar = () => {
+  if (idFilme) {
+    filmesStore.atualizarFilme(idFilme, filme)
+  } else {
+    filmesStore.inserirFilme(filme)
+  }
+  filmesStore.recuperarFilmes()
+}
+
+watch(() => filmesStore.filmeSalvo, (filmeSalvo) => {
+      if (!filmeSalvo ) {
         filmesStore.recuperarFilmes()
         router.replace({name: 'filmes'})
       }

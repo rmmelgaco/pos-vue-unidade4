@@ -1,4 +1,4 @@
-export const chamadaHttp = (url, objetoParaAtualizar, carregando, mensagem, metodoHttp = 'GET', corpo = null) => {
+export const chamadaHttp = (url, objetoParaAtualizar, carregando, mensagem, indicadorSucesso = null, metodoHttp = 'GET', corpo = null) => {
     carregando.value = true
     const headers = {'Content-type': 'application/json'}
     const opcoesHttp = {method: metodoHttp, headers}
@@ -9,7 +9,10 @@ export const chamadaHttp = (url, objetoParaAtualizar, carregando, mensagem, meto
 
     fetch(url, opcoesHttp)
         .then((resposta) => {
-                if (resposta.status === 200) {
+                if (resposta.status === 200 || resposta.status === 201) {
+                    if (indicadorSucesso) {
+                        indicadorSucesso.value = true
+                    }
                     return resposta.json()
                 } else {
                     mensagem.value = resposta.statusText

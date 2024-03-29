@@ -9,6 +9,7 @@
     <p>Classificação: {{filme.classificacao}}</p>
     <p>Duração: {{filme.duracao}} min</p>
     <p>Gênero: {{filme.genero}}</p>
+    <slot></slot>
   </div>
 </template>
 <style scoped>
